@@ -8,6 +8,8 @@ docker-compose up
 ### Подключил удаленный amqp instance: [cloudamqp.com](https://www.cloudamqp.com/)
 Все запросы между сервисами работают через RabbitMQ
 
+## Репозиторий сервиса контактных данных пользовалей: [YesseyMelis/user_info](https://github.com/YesseyMelis/user_info)
+
 # API
 ## SWAGGER
 ```
