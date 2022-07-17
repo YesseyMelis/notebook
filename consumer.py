@@ -1,4 +1,7 @@
-import pika, json, os, django
+import pika
+import json
+import os
+import django
 
 os.environ.setdefault("DJANGO_SETTINGS_MODULE", "notebook.settings")
 django.setup()
@@ -10,13 +13,7 @@ channel.queue_declare(queue='user')
 
 
 def callback(ch, method, properties, body):
-    print('Received in admin')
-    # id = json.loads(body)
-    print(id)
-    # product = Product.objects.get(id=id)
-    # product.likes = product.likes + 1
-    # product.save()
-    print('Product likes increased!')
+    pass
 
 
 channel.basic_consume(queue='user', on_message_callback=callback, auto_ack=True)

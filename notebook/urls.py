@@ -20,7 +20,7 @@ from django.urls import path, include
 
 from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'config.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'notebook.settings')
 
 swagger_patterns = [
     path('swagger/schema/', SpectacularAPIView.as_view(), name='schema'),

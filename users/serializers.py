@@ -6,6 +6,10 @@ from users.models import User
 class UserSerializer(serializers.ModelSerializer):
 
     password = serializers.CharField(write_only=True)
+    email = serializers.EmailField(allow_null=True, allow_blank=True)
+    telegram = serializers.CharField(allow_null=True, allow_blank=True)
+    instagram = serializers.CharField(allow_null=True, allow_blank=True)
+    phone = serializers.CharField(allow_null=True, allow_blank=True)
 
     def create(self, validated_data):
 
@@ -18,13 +22,29 @@ class UserSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = User
-        fields = ("id", "login", "password",)
+        fields = (
+            "id",
+            "login",
+            "password",
+            "email",
+            "telegram",
+            "instagram",
+            "phone"
+        )
 
 
-class UserInfoSerializer(serializers.ModelSerializer):
+class UserUpdateSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(allow_null=True, allow_blank=True)
+    telegram = serializers.CharField(allow_null=True, allow_blank=True)
+    instagram = serializers.CharField(allow_null=True, allow_blank=True)
+    phone = serializers.CharField(allow_null=True, allow_blank=True)
+
     class Meta:
         model = User
         fields = (
-            'id',
-            'login'
+            "id",
+            "email",
+            "telegram",
+            "instagram",
+            "phone"
         )
