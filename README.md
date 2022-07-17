@@ -1,11 +1,12 @@
 # notebook
 
-# Подключил удаленный amqp instance: [cloudamqp.com](https://www.cloudamqp.com/)
-
 ## Для запуска
 ```
 docker-compose up
 ```
+
+### Подключил удаленный amqp instance: [cloudamqp.com](https://www.cloudamqp.com/)
+Все запросы между сервисами работают через RabbitMQ
 
 # API
 ## SWAGGER
